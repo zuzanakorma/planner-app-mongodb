@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block main_content %}
+<main class="main">
+    <div class="btn-group">
+        <button class="btn btn-primary" data-calendar-nav="prev"><a href="{{ url_for('plans.index', date=prev_month) }}"> << Prev</a></button>
+        <button class="btn" data-calendar-nav="today"><a href="{{ url_for('plans.index') }}"> Today</a></button>
+        <button class="btn btn-primary" data-calendar-nav="next"><a href="{{ url_for('plans.index', date=next_month) }}"> Next >></a></button>
+        
+    </div>
+
+
+{{ my_calendar|safe }}
+
+
+<form class="form" method="POST">
+    <textarea  id="plan" class="form__input" name="plan" rows="3" placeholder="Add a new plan"></textarea>
+    <button type="submit" class="form__button">Add</button>
+</form>
+
+<section>
+
+    {% for plan in plans %}
+        <div class="plan">
+            {% if plan["completed"]== "True" %}
+            
+            <a href="{{ url_for('plans.index', id=plan['_id'], completed=false, date=plan['date']) }}"><img src="static/img/select.png" class="habit__icon" alt="completed" title="completed"></a>
+
+        {% else %}
+        <a href="{{ url_for('plans.index', id=plan['_id'], completed=true, date=plan['date']) }}"><img src="static/img/square.png" class="habit__icon" alt="pending" title="pending"></a>
+
+            {% endif %}
+        <p class="plan__name">
+            {{ plan["name"] }} 
+           
+      
+        </p>
+        
+        <a class="delete__button" href="{{ url_for('plans.index', id=plan['_id'], date=plan['date'], delete=true) }}">Delete</a>
+        </div>
+      
+    {% endfor %}
+</section>
+
+</main>
+
+{% endblock %}

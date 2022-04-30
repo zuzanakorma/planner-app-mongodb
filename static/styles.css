@@ -1,0 +1,195 @@
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+body{
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+}
+
+.header, .main, table, form{
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    background: black;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 6px 6px 0 0;
+}
+
+.header__link{
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.1s ease-in-out;
+}
+.header__link:hover{
+    color: #f9dba0;
+}
+
+.header__logo{
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.btn-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+button, button a{
+    justify-content: space-between;
+    text-decoration: none;
+    color: black;
+    font-size: inherit;
+    background-color: #f9dba0;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+    padding: 0.5rem 2.5rem;
+    align-self: flex-end;
+}
+
+a:hover{
+    text-decoration: none;
+    color: black;
+ }
+
+.dates__link{
+    color: inherit;
+    text-decoration: none;
+    outline: none;
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+} 
+
+
+
+.dates__link--current{
+    background-color: #f9dba0;
+} 
+
+.month{
+    padding: 1rem;
+    
+}
+
+.weekday{
+    color: black
+}
+
+td{
+    padding: 2rem;
+    border: 0.5px grey solid;
+    
+}
+td:hover{
+    background-color: lightgrey;
+
+}
+
+td:active{
+    background-color: pink;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1rem;
+}
+
+.form__input{
+    padding: 1rem;
+    font-family: inherit;
+    font-size: inherit;
+    resize: none;
+    border: 3px solid black;
+    border-radius: 6px;
+    background-color: #fafafa;
+    margin-bottom: 1rem;
+}
+
+.form__button{
+    font-size: inherit;
+    background-color: #f9dba0;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+    padding: 0.5rem 2.5rem;
+    align-self: flex-end;
+}
+
+.delete__button{
+    text-decoration: none;
+    font-size: 12px;
+    background-color: #f9dba0;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+    padding: 0.5rem ;
+    align-self: flex-end;
+    color: inherit;
+    margin-bottom: 0.4rem; 
+    margin-right: 0.4rem;  
+}
+
+
+.plan{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff2d8;
+    border: 3px solid black;
+    border-radius: 6px;
+}
+
+.plan:not(.completed) {
+    padding: 0;
+    }
+    
+.plan:not(.completed):hover {
+    background-color: #e9cd87;
+    }
+    
+.plan__icon {
+    width: 1em;
+    height: 1em;
+    }
+    
+.plan__name {
+    margin: 0;
+    padding: 10px;
+    }
+    
+.plan__form {
+    width: 100%;
+    }
+    
+.plan__button {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    font-family: inherit;
+    font-size: inherit;
+    text-align: left;
+    border: none;
+    background-color: unset;
+    cursor: pointer;
+    }
+
+.habit__icon {
+    width: 1em;
+    height: 1em;
+    }
